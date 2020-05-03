@@ -337,11 +337,11 @@
 
     <div [hidden]="filteredTodos.length!==0">
     <ul>
-      <li *ngFor="let todo of todos; let i=index">
+      <li  *ngFor="let todo of todos; let i=index">
         <button *ngIf="!todo.completed" (click)="todo.completed = completeTask()">COMPLETE!</button>
         <button (click)="editTask(i)">Edit</button>
         <input *ngIf="todo.completed" type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
-        <span [ngClass]="{'checked': todo.completed}">{{ todo.task }}</span>
+        <span class="text" [ngClass]="{'checked': todo.completed}">{{ todo.task }}</span>
         <span (click)="deleteTask(i)" class="delete-icon">[X]</span>
       </li>
     </ul>
@@ -353,7 +353,9 @@
         <button *ngIf="!todo.completed" (click)="todo.completed = completeTask()">COMPLETE!</button>
         <button (click)="editFilteredTask(i)">Edit</button>
         <input *ngIf="todo.completed" type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
+        
         <span [ngClass]="{'checked': todo.completed}">{{ todo.task }}</span>
+      
         <span (click)="deleteTask(i)" class="delete-icon">[X]</span>
       </li>
     </ul>
@@ -364,7 +366,7 @@
     </div>
 
     <div class="mtop20">
-      <button (click)="deleteSelectedTasks()">Delete Selected</button>
+      <button (click)="deleteSelectedTasks()">Delete Selected!</button>
     </div>
     
   </div>
